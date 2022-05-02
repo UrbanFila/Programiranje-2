@@ -5,7 +5,6 @@ void FirstPrint(char z, int c){
     for(int i = 0; i < c; i++){
         putchar(z);
     }
-
 }
 
 void SecondFirstPrint(char z, int c){
@@ -22,15 +21,19 @@ void FirstHashPrint(char z){
 
     if(z == '#'){
 
+        int iz = 0;
         z = getchar();
 
-        int iz = z - '0';
+        while(z != '#'){
 
-        for(int i = 0; i < iz; i++){
-            putchar('#');            
+            iz = (iz * 10) + (z - '0');
+            z = getchar();
         }
 
-        getchar();
+        for(int i = 0; i < iz; i++){
+            putchar('#');
+        }
+
     }
     else{
 
